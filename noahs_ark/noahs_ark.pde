@@ -3,8 +3,15 @@ import processing.javafx.*;
 ArrayList<GameObject> engine ;
 boolean wkey, akey, skey, dkey, spacekey;
 float h = 0;
+int time;
+int wait = 1000;
+int total_time_elasped;
 Ship myShip;
+
+
+
 void setup() {
+  time = millis();
   size(400, 600, FX2D);
   engine= new ArrayList<GameObject>(1000);
   rectMode(CENTER);
@@ -22,9 +29,19 @@ void draw() {
   if(h>=9.95){
     engine.add(new Wave());
   }
-  
+
   
   background(#5ABECE);
+  
+   if(millis() - time >= wait){
+    //https://stackoverflow.com/questions/12417937/create-a-simple-countdown-in-processing
+   total_time_elasped += 1;
+   fill(0);
+   textSize(50);
+   text(total_time_elasped, 10,10);
+   time = millis(); 
+  }
+  
   int i =engine.size()-1;
 
   while (i>=0) {

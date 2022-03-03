@@ -13,10 +13,9 @@ class Rock extends GameObject {
 
   void show() {
     fill(#767676);
-
-    var img = loadImage("rock" + (round(j)));
-    img.resize(50, 50);
-    image(img, x, y);
+    rect(x,y,w,h);
+    //var img = loadImage("rock1.png");
+    //image(img, x, y);
   }
 
   void act() {

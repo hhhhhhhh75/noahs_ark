@@ -7,7 +7,7 @@ class Ship extends GameObject {
     x=width/2;
     y=height-100;
     w = 50;
-    h = 50;
+    h = 80;
     dx=0;
     dx=y;
   }
@@ -22,8 +22,8 @@ class Ship extends GameObject {
     if (x>=width-25){
        x=width-25; 
     }
-    if (x<=0){
-       x=0+50; 
+    if (x<=25){
+       x=25; 
     }
     
     
