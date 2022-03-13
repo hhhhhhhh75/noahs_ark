@@ -11,25 +11,26 @@ class Wave extends GameObject {
 
 
   void show() {
-    fill(#6EE8ED);
-    rect(x, y, w, h);
+    var img = loadImage("pictures/WaterGame2.png");
+    image(img, x, y);
+    //fill(#6EE8ED);
+    //rect(x, y, w, h);
   }
 
   void act() {
-  
-    if (rectRect(x, y, w, h, myShip.x, myShip.y, myShip.w, myShip.h)){
-      exit();
+    if (rectRect(x, y, w, h, myShip.x, myShip.y, myShip.w, myShip.h)) {
+      mode=GAMEOVER;
     }
-    
-    if (y<=height) {
+
+    if (y>=height) {
       hasDied();
     }
     y+=dy;
   }
 }
 
- 
 
-  boolean hasDied() {
-    return false;
-  }
+
+boolean hasDied() {
+  return false;
+}

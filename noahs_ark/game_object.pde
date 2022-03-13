@@ -1,5 +1,5 @@
 abstract class GameObject {
-  float x, y, dx, dy, hp,w,h, j;
+  float x, y, dx, dy, hp, w, h, j;
 
   GameObject () {
   }
@@ -7,7 +7,7 @@ abstract class GameObject {
   }
   void act() {
   }
-  
+
 
   boolean hasDied () {
     return false;

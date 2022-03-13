@@ -6,6 +6,15 @@ float h = 0;
 int time;
 int wait = 1000;
 int total_time_elasped;
+int min;
+int mode;
+boolean homescreen = true;
+PFont font, smaller_font;
+PImage ocean;
+final int INTRO=0;
+final int PLAY=1;
+final int GAMEOVER=3;
+
 Ship myShip;
 
 
@@ -17,31 +26,21 @@ void setup() {
   rectMode(CENTER);
   noStroke();
   myShip= new Ship();
-  engine.add(myShip);
+  font = loadFont("Trebuchet-BoldItalic-75.vlw");
+  smaller_font = loadFont("Trebuchet-BoldItalic-50.vlw");
+  mode=INTRO;
 }
 void draw() {
-  h=random(10);
-  
-  if(h>=9.95){
-    engine.add(new Rock());
-  }
-  
-  if(h>=9.95){
-    engine.add(new Wave());
+  if (mode==INTRO) {
+    intro();
+  } else if (mode==PLAY) {
+    play();
+  } else if (mode==GAMEOVER) {
+    gameOver();
+  } else {
+    println("something is wrong");
   }
 
-  
-  background(#5ABECE);
-  
-   if(millis() - time >= wait){
-    //https://stackoverflow.com/questions/12417937/create-a-simple-countdown-in-processing
-   total_time_elasped += 1;
-   fill(0);
-   textSize(50);
-   text(total_time_elasped, 10,10);
-   time = millis(); 
-  }
-  
   int i =engine.size()-1;
 
   while (i>=0) {
@@ -54,6 +53,8 @@ void draw() {
     i--;
   }
 }
+
+
 
 void keyPressed() {
   if (key=='w'||key=='W') wkey=true;
