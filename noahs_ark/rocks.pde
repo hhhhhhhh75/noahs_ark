@@ -5,18 +5,15 @@ class Rock extends GameObject {
     y=-50;
     dx=0;
     dy=random(1, 2);
-    w=50;
-    h=50;
+    w=random(50,70);
+    h=w;
     j = random(1, 3);
   }
 
 
   void show() {
-    var img = loadImage("pictures/RockGame.png");
-    //img.resize(75,25);
-    image(img, x, y);
-    //fill(#767676);
-    //rect(x, y, w, h);
+    fill(#767676);
+    ellipse(x, y, w, h);
 
   }
 

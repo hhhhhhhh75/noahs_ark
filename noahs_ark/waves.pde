@@ -5,21 +5,21 @@ class Wave extends GameObject {
     y=-50;
     dx=0;
     dy=random(1, 2);
-    w=50;
-    h=50;
+    w=random(50,70);
+    h=random(30,40);
   }
 
 
   void show() {
-    var img = loadImage("pictures/WaterGame2.png");
-    image(img, x, y);
-    //fill(#6EE8ED);
-    //rect(x, y, w, h);
+    fill(#78DEED);
+    rect(x,y,w,h);
+
   }
 
   void act() {
     if (rectRect(x, y, w, h, myShip.x, myShip.y, myShip.w, myShip.h)) {
       mode=GAMEOVER;
+
     }
 
     if (y>=height) {

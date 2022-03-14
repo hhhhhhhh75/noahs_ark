@@ -5,17 +5,18 @@ class Ship extends GameObject {
 
   Ship () {
     x=width/2;
-    y=height-100;
+    y=height-90;
     w = 50;
-    h = 50;
+    h = 70;
     dx=0;
     dx=y;
   }
 
 
   void show() {
+
     fill(#6C3902);
-    rect(x, y, w, h);
+    rect(x, y, w,h);
   }
 
   void act() {

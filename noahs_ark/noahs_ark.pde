@@ -8,6 +8,7 @@ int wait = 1000;
 int total_time_elasped;
 int min;
 int mode;
+int timer_pos=1;
 boolean homescreen = true;
 PFont font, smaller_font;
 PImage ocean;
@@ -26,7 +27,7 @@ void setup() {
   rectMode(CENTER);
   noStroke();
   myShip= new Ship();
-  font = loadFont("Trebuchet-BoldItalic-75.vlw");
+  font = loadFont("Trebuchet-BoldItalic-90.vlw");
   smaller_font = loadFont("Trebuchet-BoldItalic-50.vlw");
   mode=INTRO;
 }
