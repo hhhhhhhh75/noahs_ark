@@ -1,4 +1,4 @@
-PImage [] rocks;
+
 
 class Ship extends GameObject {
 

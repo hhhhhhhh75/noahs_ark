@@ -41,16 +41,11 @@ void timer() {
 
 void pauseButton() {
   Button Pause;
-  Pause = new Button(367, 33, 37, 37);
-   engine.remove(Pause);
+  Pause = new Button(367, 33, 37, 37, PAUSE);
+  engine.remove(Pause);
   engine.add(Pause);
   
-  stroke(#365F6C);
-  strokeWeight(6);
-  line(360, 20, 360, 45);
-  line(380, 20, 380, 45);
-  noStroke();
- 
+  
 
   if (f==1) {
     f=0;
@@ -60,4 +55,21 @@ void pauseButton() {
       } else mode=PAUSE;
     }
   }
+}
+
+
+
+void star(float x, float y, float radius1, float radius2, int npoints) {
+  float angle = TWO_PI / npoints;
+  float halfAngle = angle/2.0;
+  beginShape();
+  for (float a = 0; a < TWO_PI; a += angle) {
+    float sx = x + cos(a) * radius2;
+    float sy = y + sin(a) * radius2;
+    vertex(sx, sy);
+    sx = x + cos(a+halfAngle) * radius1;
+    sy = y + sin(a+halfAngle) * radius1;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
 }

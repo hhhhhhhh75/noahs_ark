@@ -1,12 +1,15 @@
 class Button extends GameObject {
   float xpos=0;
   float ypos=0;
-  Button (float x, float y, float width, float height) {
+  float kk;
+
+  Button (float x, float y, float width, float height, float k) {
 
     xpos=x;
     ypos=y;
     w=width;
     h=height;
+    kk=k;
   }
 
   void show() {
@@ -17,6 +20,10 @@ class Button extends GameObject {
 
     noStroke();
   }
-  void act() {
+
+  void mouseClicked() {
+    if (rectRect(xpos, ypos, w, h, mouseX, mouseY, 10, 10)) {
+      mode=int(kk);
+    }
   }
 }
