@@ -20,7 +20,7 @@ class Wave extends GameObject {
   }
 
   void act() {
-    if (rectRect(x, y, w, h, myShip.x, myShip.y, myShip.w, myShip.h)) {
+    if (rectRect(x-5, y+20, w, h, myShip.x, myShip.y, myShip.w, myShip.h)) {
       mode=GAMEOVER;
 
     }

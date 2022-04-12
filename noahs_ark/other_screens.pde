@@ -1,6 +1,6 @@
 void play() {
   score=0;
-
+  background(#5ABECE);
 
   engine.remove(myShip);
   engine.add(myShip);
@@ -8,22 +8,22 @@ void play() {
 
   h=random(10);
 
-  if (h>=9.95) {
+  if (h>=9.92) {
     engine.add(new Rock());
   }
 
-  if (h>=9.95) {
+  if (h>=9.92) {
     engine.add(new Wave());
   }
 
-  background(#5ABECE);
+
   timer();
   pauseButton();
   f=0;
 }
 
 void gameOver() {
-   top_score.clear();
+  top_score.clear();
   while (min>0) {
     score+=60;
     min=min-1;
@@ -44,15 +44,13 @@ void gameOver() {
     engine.remove(0);
   }
 
-  String s = String.valueOf(score);
-  top_score.sort();
-  top_score.append(s);
-  
- 
-  String highscore=top_score.get(0);
-  String[] list = split(highscore, ' ');
-  saveStrings("/data/scores.txt", list);
-  
+  String[] lines = loadStrings("/data/scores.txt");
+  int k = Integer.parseInt(lines[0]);
+  if (score>k) {
+    String highscore=str(score);
+    String[] list = split(highscore, ' ');
+    saveStrings("/data/scores.txt", list);
+  }
 }
 
 void pause() {
@@ -75,8 +73,6 @@ void intro() {
   fill (#5ABECE);
   stroke(#365F6C);
   strokeWeight(6);
-  println(mouseX, mouseY);
-  
   rect(290, 390, 140, 100);
   rect(110, 390, 140, 100);
   fill (#FFCE29);
@@ -85,6 +81,7 @@ void intro() {
   line(290, 400, 290, 420);
   line(275, 420, 305, 420);
   arc(290, 375, 40, 50, -0.8, PI+QUARTER_PI, CHORD);
+  strokeJoin(ROUND);
   triangle(85, 365, 85, 415, 135, 390);
   if (f==1) {
     f=0;
@@ -108,7 +105,7 @@ void highscore() {
   println(mouseX, mouseY);
   stroke(#365F6C);
   strokeWeight(6);
-  rect(280,343,150,100);
+  rect(280, 343, 150, 100);
   fill (#000000);
   textFont(smaller_font);
   textAlign (CENTER);
@@ -121,7 +118,7 @@ void highscore() {
   top_score.append(lines);
   int k = Integer.parseInt(top_score.get(0));
   text(k, 140, 360);
-  
+
   if (f==1) {
     f=0;
     if (rectRect(200, 290, 150, 100, mouseX, mouseY, 10, 10)) {

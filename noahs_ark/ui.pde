@@ -1,5 +1,4 @@
 void timer() {
-
   stroke(#365F6C);
   strokeWeight(6);
 
@@ -36,16 +35,18 @@ void timer() {
   } else if (timer_pos==5) {
     timer_pos=1;
   }
+  println(timer_pos);
   noStroke();
 }
 
 void pauseButton() {
-  Button Pause;
-  Pause = new Button(367, 33, 37, 37, PAUSE);
-  engine.remove(Pause);
-  engine.add(Pause);
-  
-  
+  stroke(#365F6C);
+  strokeWeight(6);
+  fill (#5ABECE);
+  rect(365, 35, 38, 38);
+  line(358, 27, 358, 43);
+  line(372, 27, 372, 43);
+  noStroke();
 
   if (f==1) {
     f=0;

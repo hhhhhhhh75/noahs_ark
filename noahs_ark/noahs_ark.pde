@@ -11,7 +11,7 @@ int mode;
 int timer_pos=5;
 int f;
 int score=0;
-StringList top_score;
+StringList top_score, temp;
 PFont font, smaller_font;
 final int INTRO=0;
 final int PLAY=1;
@@ -23,7 +23,7 @@ Ship myShip;
 void setup() {
 
   
-  
+    timer_pos=0;
   time = millis();
   top_score = new StringList();
   size(400, 600, FX2D);

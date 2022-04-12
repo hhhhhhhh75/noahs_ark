@@ -1,5 +1,3 @@
-
-
 class Ship extends GameObject {
 
 

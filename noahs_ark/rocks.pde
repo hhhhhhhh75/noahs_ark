@@ -21,7 +21,7 @@ class Rock extends GameObject {
   }
 
   void act() {
-    if (rectRect(x, y, w, h, myShip.x, myShip.y, myShip.w, myShip.h)) {
+    if (rectRect(x-5, y+5, w, h, myShip.x, myShip.y, myShip.w, myShip.h)) {
       mode=GAMEOVER;
       
     }
