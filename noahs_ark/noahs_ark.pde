@@ -4,6 +4,7 @@ ArrayList<GameObject> engine ;
 boolean wkey, akey, skey, dkey, spacekey;
 float h = 0;
 int time;
+PImage rock, log, water, ark;
 int wait = 1000;
 int total_time_elasped;
 int min;
@@ -21,9 +22,16 @@ final int HIGHSCORE=4;
 
 Ship myShip;
 void setup() {
+  rock = loadImage("pic/rock.png");
+  rock.resize(65, 65);
+  log = loadImage("pic/log.png");
+  log.resize(80, 40);
+  water = loadImage("pic/water.png");
+  water.resize(400, 600);
+  ark = loadImage("pic/ark.png");
+  ark.resize(70, 45);
 
-  
-    timer_pos=0;
+  timer_pos=0;
   time = millis();
   top_score = new StringList();
   size(400, 600, FX2D);
@@ -33,7 +41,6 @@ void setup() {
   font = loadFont("Trebuchet-BoldItalic-90.vlw");
   smaller_font = loadFont("Trebuchet-BoldItalic-50.vlw");
   mode=INTRO;
-  
 }
 void draw() {
   if (mode==INTRO) {
@@ -46,7 +53,7 @@ void draw() {
     pause();
   } else if (mode==HIGHSCORE) {
     highscore();
-  } else{
+  } else {
     println("something is wrong");
   }
   int i =engine.size()-1;
@@ -60,7 +67,6 @@ void draw() {
     }
     i--;
   }
-  
 }
 
 

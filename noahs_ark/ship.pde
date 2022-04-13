@@ -3,9 +3,9 @@ class Ship extends GameObject {
 
   Ship () {
     x=width/2;
-    y=height-90;
-    w = 50;
-    h = 70;
+    y=height-100;
+    w = 75;
+    h = 45;
     dx=0;
     dx=y;
   }
@@ -13,8 +13,7 @@ class Ship extends GameObject {
 
   void show() {
 
-    fill(#6C3902);
-    rect(x, y, w,h);
+    image(ark, x-w/2, y-h/2);
   }
 
   void act() {

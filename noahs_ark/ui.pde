@@ -2,7 +2,7 @@ void timer() {
   stroke(#365F6C);
   strokeWeight(6);
 
-  fill(#5ABECE);
+  fill(#5ABECE, 0);
   ellipse(30, 32, 38, 38);
 
   if (millis() - time >= wait) {
@@ -42,7 +42,7 @@ void timer() {
 void pauseButton() {
   stroke(#365F6C);
   strokeWeight(6);
-  fill (#5ABECE);
+  fill (#5ABECE, 0);
   rect(365, 35, 38, 38);
   line(358, 27, 358, 43);
   line(372, 27, 372, 43);

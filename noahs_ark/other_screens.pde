@@ -1,6 +1,8 @@
 void play() {
   score=0;
+
   background(#5ABECE);
+
 
   engine.remove(myShip);
   engine.add(myShip);
@@ -8,11 +10,11 @@ void play() {
 
   h=random(10);
 
-  if (h>=9.92) {
+  if (h>=9.93){
     engine.add(new Rock());
   }
 
-  if (h>=9.92) {
+  if (h>=9.93){
     engine.add(new Wave());
   }
 
@@ -23,7 +25,6 @@ void play() {
 }
 
 void gameOver() {
-  top_score.clear();
   while (min>0) {
     score+=60;
     min=min-1;
@@ -68,8 +69,8 @@ void intro() {
   fill (#000000);
   textFont(font);
   textAlign (CENTER);
-  text("FLOOD", 200, 150);
-  text("ESCAPE", 200, 220);
+  text("NOAHS", 200, 150);
+  text("QUEST", 200, 220);
   fill (#5ABECE);
   stroke(#365F6C);
   strokeWeight(6);
